@@ -26,7 +26,7 @@ public class CommentRemover
             }// end while loo[
         }// end try
         return content.toString();
-    }
+    }// end readFile method 
 
     private static String removeComments(String code)
     {
@@ -35,7 +35,7 @@ public class CommentRemover
         Pattern pattern = Pattern.compile(singleLineComment + "|" + multiLineComment, Pattern.DOTALL);
         Matcher matcher = pattern.matcher(code);
         return matcher.replaceAll("");
-    }// end private string method
+    }// end private string removeComments method
 
     private static void writeFile(String filePath, String content) throws IOException
     {
@@ -43,7 +43,7 @@ public class CommentRemover
         {
             bw.write(content);
         }// end try
-    }// end private writeFile
+    }// end private writeFile method
     public static void main(String[] args)
     {
         if (args.length < 2)
